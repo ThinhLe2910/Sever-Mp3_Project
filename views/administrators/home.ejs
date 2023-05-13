@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="<%- config.domain %>">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="dist/js/jPlayer/jplayer.flat.css" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="dist/css/pages/user-card.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="dist/css/style.min.css" rel="stylesheet">
+    <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body class="skin-megna fixed-layout">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Elite admin</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                         <!-- dark Logo text -->
+                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav me-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark" href="javascript:void(0)"><i class="icon-menu"></i></a> </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item">
+                            <form class="app-search d-none d-md-block d-lg-block">
+                                <input type="text" class="form-control" placeholder="Search & enter">
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class=""> <span class="hidden-md-down">Mark &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-end animated flipInY">
+                                <!-- text-->
+                                <a id="chooseItem5" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+                                <!-- text-->
+                                <div class="dropdown-divider"></div>
+                                <!-- text-->
+                                <a id="chooseItem4" class="dropdown-item"><i class="ti-settings"></i> Change Password</a>
+                                <!-- text-->
+                                <div class="dropdown-divider"></div>
+                                <!-- text-->
+                                <a id="btnLogout" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                                <!-- text-->
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">--- PERSONAL</li>
+                        <li> <a class="waves-effect waves-dark" id="chooseItem" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Account</span></a></li>
+                        </li>
+                        <li class="nav-small-cap">--- Professional</li>
+                        <li><a class="has-arrow waves-effect waves-dark" id="chooseItem2" aria-expanded="false"><i class="ti-music"></i><span class="hide-menu">Music</span></a>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" id="chooseItem3" aria-expanded="false"><i class="ti-microphone"></i><span class="hide-menu">Albums</span></a>
+                        </li>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </aside>
+
+        <div class="page-wrapper">
+
+            <div class="container-fluid">
+
+                <%- include('pages/'+ page) %>
+
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="r-panel-body">
+                            <ul id="themecolors" class="m-t-20">
+                                <li><b>With Light sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme">4</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme working">6</a></li>
+                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme ">7</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-blue-dark" class="blue-dark-theme">10</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
+                            </ul>
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Chat option</b></li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- <div class="mplayer">
+                <div id="jp_container_N" class="bg-dark jp-video-270p jp-state-no-volume">
+                    <div class="jp-type-playlist">
+                        <div id="jplayer_N" class="jp-jplayer hide"></div>
+                        <div class="jp-gui">
+                            <div class="jp-interface">
+                                <div class="jp-controls">
+                                    <div><a class="jp-previous"><i class="fa fa-step-backward"></i></a></div>
+                                    <div>
+                                        <a class="jp-play"><i class="fa fa-play-circle fa-2x"></i></a>
+                                        <a class="jp-pause"><i class="fa fa-pause-circle fa-2x"></i></a>
+                                    </div>
+                                    <div><a class="jp-next"><i class="fa fa-step-forward"></i></a></div>
+                                    <div class="jp-progress hidden-xs">
+                                        <div class="jp-seek-bar" style="width: 100%;">
+                                            <div class="jp-play-bar play-progress" style="width: 0%">
+                                            </div>
+                                            <div class="jp-current-time current-time text-white" style="position: absolute;
+                                            top: auto;
+                                            bottom: 5px;
+                                            left: 5px;"></div>
+                                            <div class="jp-title text-white" style="position: absolute;
+                                            left: 25px;
+                                            top: 10px;
+                                            right: 25px;
+                                            display: block !important; line-height: normal;">
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
+                                            </div>
+                                            <div class="jp-duration duration text-white" style="position: absolute;
+                                            top: auto;
+                                            bottom: 5px;
+                                            right: 5px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="hidden-xs hidden-sm">
+                                        <a class="jp-mute" title="mute"><i class="fa fa-volume-up"></i></a>
+                                        <a class="jp-unmute" title="unmute"><i class="fa fa-volume-off"></i></a>
+                                    </div>
+                                    <div class="jp-volume hidden-xs hidden-sm jp-music-volume" style="display: none;">
+                                        <div class="jp-volume-bar bg-muted">
+                                            <div class="jp-volume-bar-value"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                 <a class="jp-shuffle" title="shuffle"><i class="icon-shuffle text-muted"></i></a>
+                                 <a class="jp-shuffle-off hid" title="shuffle off"><i class="icon-shuffle text-lt"></i></a>
+                                 </div> -->
+                                    <!-- <div>
+                                 <a class="jp-repeat" title="repeat"><i class="icon-loop text-muted"></i></a>
+                                 <a class="jp-repeat-off hid" title="repeat off"><i class="icon-loop text-lt"></i></a>
+                                 </div> -->
+                                    <div><a class="" data-bs-toggle="dropdown" data-bs-target="#playlist"><i class="fa fa-bars"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jp-playlist dropup" id="playlist">
+                            <ul class="dropdown-menu bg-inverse m-b-0">
+                                <li class="list-group-item"></li>
+                            </ul>
+                        </div>
+                        <div class="jp-no-solution hide">
+                            <span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            © 2021 Eliteadmin by themedesigner.in
+            <a href="https://www.wrappixel.com/">WrapPixel</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <!--stickey kit -->
+    <script type="text/javascript" src="dist/js/jPlayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="dist/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="dist/js/jPlayer/init.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <script src="./administrators/home.js"></script>
+    
+
+
+  
+</body>
+
+</html>

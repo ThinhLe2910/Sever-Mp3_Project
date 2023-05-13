@@ -1,0 +1,100 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Music Manage</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">All Geners Page</li>
+            </ol>
+            <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white"><i class="fa fa-plus-circle"></i> Create New</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-9 col-xlg-10 col-md-8">
+        <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Information</h5>
+                    <form class="form-material form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Name Song</span>
+                            </label>
+                            <div class="col-md-12">
+                                <input type="text" id="txtNameSong" name="example-text" class="form-control" placeholder="Name Song">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Music Image</span>
+                            </label>
+                            <div class="col-md-12">
+                                <img src="./upload/image/music/music.png"   height="100px" id="imageMusic" width="100px">
+                            <input type="hidden"  id="hiddenImage"  value="music.png">
+                            <input type="file" name="fileImage"  id="fileImage">
+                            </div>    
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Name Singer</span>
+                            </label>
+                            <div class="col-md-12">
+                                <input type="text" id="txtNameSinger" name="example-text" class="form-control" placeholder="Name Singer">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Album</label>
+                            <select class="form-select col-12" id="inlineFormCustomSelect">
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Status</label>
+                        <div class="form-check form-switch">
+                            <input type="checkbox" class="form-check-input" name="true" id="customSwitch1">
+                            <label class="form-check-label" for="customSwitch1">OFF/ON</label>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Track</span>
+                            </label>
+                            <div class="col-md-12">
+                            <audio id="auido"  controls>
+                                    <source src="" type="audio/mpeg">
+                            </audio>
+                            <br>
+                            <input type="hidden"  id="hiddenMusic" value="">
+                            <input type="file" name="fileMusic"  id="fileMusic">
+                            </div>    
+                        </div>
+                        <button type="submit" id="btnAdd" class="btn btn-info waves-effect waves-light m-r-10 text-white">Add</button>
+                        <button type="submit" id="btnUpdate" class="btn btn-info waves-effect waves-light m-r-10 text-white">Update</button>
+                        <button type="submit" id="btnDelete" class="btn btn-info waves-effect waves-light m-r-10 text-white">Delete</button>
+                        <button type="submit" id="btnClear" class="btn btn-info waves-effect waves-light m-r-10 text-white">Clear</button>
+                    </form>
+                </div>
+            </div>
+        <div class="card el-element-overlay">
+            <div class="card-body">
+                <div class="card-body">
+                    <h5 class="card-title">All Geners</h5>
+                    <div class="row m-t-30" id="bodyMusic">
+                        <!-- column -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xlg-2 col-md-4">
+        <div class="list-group">
+            <a href="javascript:void(0)" id="clickAll" class="list-group-item">All</a>
+            <div id="bodyCategory">
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<script src="./administrators/music.js"></script>

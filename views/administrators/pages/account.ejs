@@ -1,0 +1,124 @@
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h4 class="text-themecolor">Account Manager</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-end">
+            <div class="d-flex justify-content-end align-items-center">
+                <ol class="breadcrumb justify-content-end">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">Account Manager</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Information</h5>
+                    <form class="form-material form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Avatar</span>
+                            </label>
+                            <div class="col-md-12">
+                                <img src="./upload/image/avatar.png"  style=" border-radius:50px" height="100px" id="avatar" width="100px">
+                            <input type="hidden"  id="hiddenAvatar" value="avatar.png">
+                            <input type="file" name="fileAvatar"  id="fileAvatar">
+                            </div>    
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Name</span>
+                            </label>
+                            <div class="col-md-12">
+                                <input type="text" id="txtName" name="example-text" class="form-control" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Username</span>
+                            </label>
+                            <div class="col-md-12">
+                                <input type="text" id="txtUsername" name="example-text" class="form-control" placeholder="UserName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" for="example-text">Email</span>
+                            </label>
+                            <div class="col-md-12">
+                                <input type="text" id="txtEmail" name="example-text" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <button type="submit" id="btnUpdate" class="btn btn-info waves-effect waves-light m-r-10 text-white">Update</button>
+                        <button type="submit" id="btnDelete" class="btn btn-info waves-effect waves-light m-r-10 text-white">Delete</button>
+                        <button type="submit" id="btnClear" class="btn btn-info waves-effect waves-light m-r-10 text-white">Clear</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-hover no-wrap">
+                        <thead>
+                            <tr>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Avatar</th>
+                                <th class="text-center">NAME</th>
+                                <th class="text-center">USERNAME</th>
+                                <th class="text-center">EMAIL</th>
+                                <th class="text-center">EMAIL ACTIVE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listAccount">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <div class="right-sidebar">
+        <div class="slimscrollright">
+            <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+            <div class="r-panel-body">
+                <ul id="themecolors" class="m-t-20">
+                    <li><b>With Light sidebar</b></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme">4</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme working">6</a></li>
+                    <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme ">7</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-blue-dark" class="blue-dark-theme">10</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
+                    <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<script src="./administrators/account.js"></script>
