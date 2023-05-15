@@ -101,6 +101,7 @@ $(document).ready(function(){
         currentChoose =  $(this).attr("_id");
         arrayMusic.forEach(music=>{
             if(music._id == currentChoose){
+                $('#btnAdd').prop('disabled', true);
                 $('#txtNameSong').val(music.nameAlbum);
                 $('#txtNameSinger').val(music.nameSinger);
                 categoryIdOption = music.idCategory;

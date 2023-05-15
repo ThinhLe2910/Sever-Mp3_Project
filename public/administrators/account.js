@@ -6,6 +6,7 @@ $(document).ready(function(){
 
     
     $(document).on("click","#btnChoose",function(evt){
+        
         currentChooseId = $(this).attr("_id");
         arrayAcc.forEach(acc=>{
             if(acc._id == currentChooseId){
@@ -13,7 +14,7 @@ $(document).ready(function(){
                 $('#txtName').val(acc.name);
                 $('#txtUsername').val(acc.username);
                 $('#txtEmail').val(acc.email);
-                $('#avatar').attr("src","upload/image/"+acc.avatarImage);
+                $('#avatar').attr("src","upload/image/avatar/"+acc.avatarImage);
                 $('#hiddenAvatar').val(acc.avatarImage);
             }
             })
@@ -38,7 +39,7 @@ $(document).ready(function(){
             success: function(data){
                
                 if(data.result==1){
-                    $("#avatar").attr("src","upload/image/" + data.data);
+                    $("#avatar").attr("src","upload/image/avatar/" + data.data);
                     $('#hiddenAvatar').val(data.data);
                 }else{
                     alert("Upload fail!");
@@ -60,7 +61,6 @@ $(document).ready(function(){
                     email:$('#txtEmail').val(),
                     avatarImage:$('#hiddenAvatar').val(),
                 },function(data){
-                    console.log(data);
                     if(data.result==1){
                         alert(data.message);
                         clearForm();
@@ -83,7 +83,6 @@ $(document).ready(function(){
                     token:getCookie("Token"),
                     _id:currentChooseId,
                 },function(data){
-                    console.log(data);
                     if(data.result==1){
                         alert(data.message);
                         clearForm();
@@ -107,12 +106,11 @@ $(document).ready(function(){
                 $('#listAccount').html("");
                 data1.data.forEach(acc => {
                        index += 1
-    
                        if(acc.avatarImage){
-                        avatar = `<td class="text-center"><img src="upload/image/`+acc.avatarImage
+                        avatar = `<td class="text-center"><img src="upload/image/avatar/`+acc.avatarImage
                         +`" width="30px" height="30px" alt=""></td> `
                        }else{
-                        avatar = `<td class="text-center"><img src="upload/image/avatar.png" width="30px" height="30px" alt=""></td> `
+                        avatar = `<td class="text-center"><img src="upload/image/avatar/avatar.png" width="30px" height="30px" alt=""></td> `
                        }
                     $('#listAccount').append(`                
                 <tr>

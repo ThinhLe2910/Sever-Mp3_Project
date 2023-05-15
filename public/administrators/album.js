@@ -63,6 +63,7 @@ $(document).ready(function(){
         currentChooseId = $(this).attr("_id");
         arrayCate.forEach(category=>{
             if(category._id == currentChooseId){
+                $('#btnAdd').prop('disabled', true);
                 var indexCategory = category.image.lastIndexOf('/')
                 var categoryImage = category.image.slice(indexCategory+1)
                 $('#txtName').val(category.name);
@@ -78,7 +79,6 @@ $(document).ready(function(){
             token : getCookie("Token"),
             name : $('#txtName').val(),
         },function(data){   
-            console.log(data);
             if(data.result==1){
                 alert(data.message)
                 clearForm()
@@ -89,7 +89,6 @@ $(document).ready(function(){
     })
     })
     $(document).on('click','#btnUpdate',function(evt){
-        console.log($('#fileImage').val());
         if (confirm('Are you sure you want to update?')) {
         $.post('/category/update',  
         {  
@@ -98,7 +97,6 @@ $(document).ready(function(){
             _id : currentChooseId,
             image: $('#hiddenImage').val()
         },function(data){   
-            console.log(data);
             if(data.result==1){
                 alert(data.message)
                 clearForm()
@@ -118,7 +116,6 @@ $(document).ready(function(){
             token : getCookie("Token"),
             _id : currentChooseId
         },function(data){   
-            console.log(data);
             if(data.result==1){
                 alert(data.message)
                 clearForm()

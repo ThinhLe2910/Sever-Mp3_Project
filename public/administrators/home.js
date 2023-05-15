@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    getAcc()
     $("#chooseItem").click(function(){
         window.location = "/administrator/account";
     });
@@ -17,12 +18,12 @@ $(document).ready(function(){
     $("#btnLogout").click(function(){
         var token = getCookie("Token");
         $.post("./logout",{token:token},function(data){
-            console.log(data);
             eraseCookie("Token");
             window.location = "/loginAdmin";
             
         });
     });
+
 })
     function getCookie(cname) {
     let name = cname + "=";
@@ -40,4 +41,14 @@ $(document).ready(function(){
     }
     function eraseCookie(name) {   
         document.cookie = name+'=; Max-Age=-99999999;'; 
+    }
+    function getAcc(){
+        var token = getCookie("Token")
+        $.post('/account',{token:token},function(data1){
+            if(data1.result==1){
+                var indexImage = data1.data.avatarImage.lastIndexOf('/')
+                var avatarImage = data1.data.avatarImage.slice(indexImage+1)
+                $('#avatarHomeImage').attr("src","upload/image/avatar/"+avatarImage);
+            }
+        });
     }

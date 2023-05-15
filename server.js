@@ -34,11 +34,13 @@ const config =
     },
     "secretString" :"*(l120th222h5i8n0haa*Y@*ODHljashdho9a28yd82ohd"
 }
+exports.config = config
 const connectionString = config.dbMongo.localhost
 mongoose.connect(connectionString, {useNewUrlParser:true, useUnifiedTopology:true})
   .then(()=>{
             console.log("Mongo is connected successfully");
             require("./routes/Main")(app,config);
+            
             // require("./routes/sockets")(app,config);
       })
       .catch((err)=>{

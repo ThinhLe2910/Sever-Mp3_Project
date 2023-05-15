@@ -6,7 +6,8 @@ $(document).ready(function(){
             token:getCookie("Token"),
             name:$('#txtName').val(),
             email:$('#txtEmail').val(),
-            username:$('#txtUserName').val()
+            username:$('#txtUserName').val(),
+            avatarImage:$('#hiddenAvatar').val(),
         },function(data){
             if(data.result == 1){
                 alert(data.message);
@@ -25,6 +26,9 @@ $(document).ready(function(){
             username:$('#txtUserName').val()
         },function(data){
             if(data.result == 1){
+                var indexImage = data.data.avatarImage.lastIndexOf('/')
+                var avatarImage = data.data.avatarImage.slice(indexImage+1)
+                $('#avatar').attr("src","upload/image/avatar/"+avatarImage);
                 $('#txtName').val(data.data.name),
                 $('#txtEmail').val(data.data.email),
                 $('#txtUserName').val(data.data.username) 
@@ -46,5 +50,29 @@ $(document).ready(function(){
             }
         }
         return "";
-        }
+    }
+    $("#fileAvatar").change(function(){     
+        var data = new FormData();
+        jQuery.each(jQuery('#fileAvatar')[0].files, function(i, file) {
+            data.append("avatar", file);
+        });
+    
+        jQuery.ajax({
+            url: './uploadAvatar',
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            method: 'POST',
+            type: 'POST',
+            success: function(data){
+                if(data.result==1){
+                    $("#avatar").attr("src","upload/image/avatar/" + data.data);
+                    $('#hiddenAvatar').val(data.data);
+                }else{
+                    alert("Upload fail!");
+                }
+            }
+        });
+    });
 })
